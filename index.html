@@ -35,6 +35,7 @@
             text-decoration: underline;
         }
         .section {
+            display: none; /* Hide all sections by default */
             margin: 20px;
             padding: 20px;
             background-color: #ffccff;
@@ -48,6 +49,7 @@
             color: white;
             padding: 20px;
             text-align: center;
+            display: block; /* Display only the Blog section */
         }
         footer {
             text-align: center;
@@ -66,6 +68,12 @@
         <h1>Welcome to Kekee Wairimu's World</h1>
     </header>
     
+    <nav>
+        <a href="#blog">Blog</a>
+        <a href="#shop">Shop</a>
+        <a href="#fans">Fans</a>
+    </nav>
+
     <!-- Blog Section (Main Page) -->
     <section id="blog" class="section blog">
         <h2>Blog</h2>
@@ -83,13 +91,13 @@
             </ul>
         </div>
     </section>
-    
+
     <!-- Shop Section -->
     <section id="shop" class="section">
         <h2>Shop</h2>
         <p>Check out my latest products and merchandise!</p>
     </section>
-    
+
     <!-- Fans Section -->
     <section id="fans" class="section">
         <h2>Fans</h2>
@@ -100,19 +108,12 @@
         <p>&copy; 2024 Kekee Wairimu. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for Smooth Scroll -->
+    <!-- JavaScript to Show Blog Section on Page Load -->
     <script>
-        // Smooth scroll function
-        function smoothScroll(target) {
-            document.querySelector(target).scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-
-        // Smooth scroll when page loads (scroll to #blog)
-        window.onload = function() {
-            smoothScroll('#blog');
-        };
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show only the Blog section
+            document.getElementById('blog').style.display = 'block';
+        });
     </script>
 </body>
 </html>
